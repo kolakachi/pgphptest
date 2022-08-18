@@ -41,7 +41,6 @@ class UserTest extends TestCase
         ]);
  
         $response->assertStatus(422);
-        $response->assertSessionHasErrors();
     }
 
     public function test_api_invalid_password()
