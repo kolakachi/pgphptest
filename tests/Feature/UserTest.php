@@ -25,7 +25,7 @@ class UserTest extends TestCase
     {
         $response = $this->post('/api/update', [
             'id' => 4, 
-            'comment' => 'New user update',
+            'comments' => 'New user update',
             'password' => StaticVariables::STATIC_KEY
         ]);
  
@@ -36,7 +36,7 @@ class UserTest extends TestCase
     {
         $response = $this->post('/api/update', [
             'id' => "test", 
-            'comment' => 'New user update',
+            'comments' => 'New user update',
             'password' => StaticVariables::STATIC_KEY
         ]);
  
@@ -48,7 +48,7 @@ class UserTest extends TestCase
     {
         $response = $this->post('/api/update', [
             'id' => 4, 
-            'comment' => 'New user update',
+            'comments' => 'New user update',
             'password' => '720DF218518FA20FDC52D4DED7ECC043AB'
         ]);
  
