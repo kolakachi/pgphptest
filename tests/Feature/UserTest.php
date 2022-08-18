@@ -42,7 +42,6 @@ class UserTest extends TestCase
  
         $response->assertStatus(422);
     }
-
     public function test_api_invalid_password()
     {
         $response = $this->post('/api/update', [

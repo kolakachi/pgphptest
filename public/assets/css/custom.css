@@ -1,0 +1,12 @@
+.form-group {
+    margin-bottom: 5px;
+}
+
+.error-message{
+    color: red;
+    font-size: 10px;
+}
+
+input, select, textarea{
+    text-transform: none !important;
+}
