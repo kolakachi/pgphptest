@@ -10,4 +10,12 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function rules(){
+        return [
+            'comments' => 'required|string',
+            'id' => 'required|integer|exists:users',
+            'password' => 'required|string',
+        ];
+    }
 }
