@@ -11,6 +11,39 @@ use Illuminate\Support\Facades\Validator;
 
 class CommentController extends Controller
 {
+    /**
+     *  append comment to the users table
+     * 
+     *
+     * This endpoint uses form data to append to comments.
+     * 
+     *
+     * 
+     * @bodyParam id integer required The ID of the user
+     * @bodyParam comments string The comments to append
+     * @bodyParam password string The static value
+
+     * 
+     * @response {
+     *  "message": OK,
+     * }
+     * @response status=422 scenario="Invalid key/value" {
+     *  "message": "Invalid key/value",
+     *  "errors": {
+     *      "id": [
+     *          "The selected id is invalid."
+     *      ]
+     *   },
+     * }
+     * @response status=401 scenario="Invalid password" {
+     *  "message": "Invalid password",
+     *  "errors": [],
+     * }
+     * @response status=%00 scenario="Could not complete request" {
+     *  "message": "Could not complete request",
+     *  "errors": [],
+     * }
+    */
     public function update(Request $request){
         try {
             $validator = Validator::make($request->all(), $this->rules());
@@ -39,7 +72,7 @@ class CommentController extends Controller
 
         } catch (Exception $error) {
             return response()->json([
-                "message" => "Could not update database: ".  $error->getMessage(),
+                "message" => "Could not complete request: ".  $error->getMessage(),
                 "errors" => []
             ], 500);
         }        

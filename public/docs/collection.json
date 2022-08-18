@@ -1,0 +1,286 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/127.0.0.1:8000"
+        }
+    ],
+    "info": {
+        "name": "PGPPHPTEST",
+        "_postman_id": "2a14e3e7-af95-40c9-993f-d7ef2a7a0545",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Return an empty response simply to trigger the storage of the CSRF cookie in the browser.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "sanctum\/csrf-cookie",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/sanctum\/csrf-cookie"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IkhDTklMQkxEdGZVbDh4UTIwTEJVc0E9PSIsInZhbHVlIjoiYVM5NUdCUE9Fc0E0aERLak5sUU5Bc3lSM0Y4Umd1QzFhK3VZT2RYWXBrMXEzRGpoMUhYSmE0TlRFVFByZWFHQytlMjhzTi83ejJTR3dSbjJzblA0dzcySkpQanhJcTRFV1c2ajhuTTRqNzBPWWMxYmJtaW5rNHg1S004TVR6TnYiLCJtYWMiOiI4Njg1NzAxYjNlYzE0MmU0MTBkOGZiNWNjYzIwOTAyYmU0YTBiMDQ1YzkzZTM2NWJkOTE3ZWI5ZmRkZTFiYzY3IiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=\/; samesite=lax; pgpphptest_session=eyJpdiI6Im1tMnB5ZGp3ZUo4ajA2ZmxxZjlaK3c9PSIsInZhbHVlIjoidlpQTDM5M2ZkbzRFSnJHb05qQnlwYmovZDZkby9NelpiR1NuWEJLQld0NXJ6VjBpdldBRU1UVEhadC9LZllFV3NoaTdlNlo3MlBoVjNtbXA5MXBFb21pQlRoalk4bHgyMlRob0R5aUt5aVlkSjJoN2hxV2JEYVFWUzJIMGZpakIiLCJtYWMiOiIxM2FjMjkyYzI3NDQwMGJlYWQ1NTRlYzE3NjMxNTU5MjY5M2Q4OThjZjRmYzhiYWE5YTg3ODlhNmQ2MjdiZjVjIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 204,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "append comment to the users table",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"id\":7,\"comments\":\"voluptas\",\"password\":\"exercitationem\"}"
+                        },
+                        "description": "This endpoint uses form data to append to comments.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": OK,\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"message\": \"Invalid key\/value\",\n \"errors\": {\n     \"id\": [\n         \"The selected id is invalid.\"\n     ]\n  },\n}",
+                            "name": "Invalid key\/value"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n \"message\": \"Invalid password\",\n \"errors\": [],\n}",
+                            "name": "Invalid password"
+                        },
+                        {
+                            "header": [],
+                            "code": 0,
+                            "body": "{\n \"message\": \"Could not complete request\",\n \"errors\": [],\n}",
+                            "name": "%00, Could not complete request"
+                        }
+                    ]
+                },
+                {
+                    "name": "view to append comments to the users table",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "append-comment",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/append-comment"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint returns a view for appending comments.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-type",
+                                    "value": "text\/html; charset=UTF-8"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6ImxYUWMzK3NTTkUybU5vOHRiWEZkbnc9PSIsInZhbHVlIjoibWgrdnlJbmpwNGhjR1o3cVhMN2V0YmF5MHMvVitjelo3eE0vMlFick9MUGlkNm8yQjUrOExKVTdTQ3FhU09vbURZMEh0Nkl0TkNHL2t4dE1qbmJiaUJNRXpXZFFtOHorTHNBNDFQUjVPUW1VUkx2TGV6TW82Z3l2K1owOVdIMWgiLCJtYWMiOiIzZTZhNGRlMzZjNzU2OTUxMDI3NTQ0M2YwYTRmYWIxOWUzZDRiNWQwMWE4OTFlOGZjMmJkZjE0NmY2ZjIyZThiIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=\/; samesite=lax; pgpphptest_session=eyJpdiI6ImJKMnRFQVRtK2ZEQkNEdFMxQVNMdHc9PSIsInZhbHVlIjoiZGlrRC9mZ2pxOGt5QU5BZzVnTWdJY3REQ1ZDSnBjTExqVDRQeWlYRHNyU1gvZ1Z5UmNvQytBTWNkZE1vbndHQTVpRGJMYmlBZUlNZnE3cTVZYXlLN0pncDRZNGJjVVVMSTVhSmNPbmFDNzJGVkNQM0hoL0d5QkNQTDJYRDUrUlEiLCJtYWMiOiJjNjM0YmYzYjkzMTIwZDRiYTk0ZDg1NjNhNDJlMWI5NDBkMTBmMmRmOTgyNmEwOWViZDM5NTBhMTE3NTE3NmQyIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "<!DOCTYPE HTML>\n<html>\n<head>\n    <title>User Card - Mr. Brendan Sporer PhD<\/title>\n    <meta charset=\"utf-8\" \/>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" \/>\n    <link rel=\"stylesheet\" href=\"\/assets\/css\/main.css\" \/>\n    <noscript><link rel=\"stylesheet\" href=\"\/assets\/css\/noscript.css\" \/><\/noscript>\n    <link rel=\"stylesheet\" href=\"\/assets\/css\/custom.css\" \/>\n<\/head>\n<body class=\"is-preload\">\n<div id=\"wrapper\">\n    <section id=\"main\">\n    <header>\n        <span class=\"avatar\"><img src=\"images\/users\/2.jpg\" alt=\"\" \/><\/span>\n        <h1>Mr. Brendan Sporer PhD<\/h1>\n        <p>Ut.<\/p>\n    <\/header>\n<\/section>\n    <footer id=\"footer\">\n        <ul class=\"copyright\">\n            <li>&copy; Pictureworks<\/li>\n        <\/ul>\n    <\/footer>\n\n<\/div>\n<script>\n    if ('addEventListener' in window) {\n        window.addEventListener('load', function() { document.body.className = document.body.className.replace(\/\\bis-preload\\b\/, ''); });\n        document.body.className += (navigator.userAgent.match(\/(MSIE|rv:11\\.0)\/) ? ' is-ie' : '');\n    }\n<\/script>\n<\/body>\n<\/html>",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "append comment to the users table",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "update-comment",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/update-comment"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"id\":17,\"comments\":\"illum\",\"password\":\"provident\"}"
+                        },
+                        "description": "This endpoint uses json data to append to comments.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": OK,\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n \"message\": \"Invalid key\/value\",\n \"errors\": {\n     \"id\": [\n         \"The selected id is invalid.\"\n     ]\n  },\n}\n @response status=401 scenario=\"Invalid password\" {\n \"message\": \"Invalid password\",\n \"errors\": [],\n}\n  @response status=%00 scenario=\"Could not complete request\" {\n \"message\": \"Could not complete request\",\n \"errors\": [],\n}",
+                            "name": "Invalid key\/value"
+                        }
+                    ]
+                },
+                {
+                    "name": "view to fetch user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": ":id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "nobis",
+                                    "description": "The ID of the ."
+                                },
+                                {
+                                    "id": "integer",
+                                    "key": "integer",
+                                    "value": "1%0A%0AThis+endpoint+returns+a+view+displaying+the+selected+user.",
+                                    "description": "the Id of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-type",
+                                    "value": "text\/html; charset=UTF-8"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6IjRjOFJPeFVVSE1QenB1WExXRGdQakE9PSIsInZhbHVlIjoiOUQrRHRiS1o1Y0p6WWp3Q3J0TTY5K0FlTG1YYTNhcGErbVpFeHpsTzhpWmtXU2NpUWdnV0NWZmVSM2hCTXYyK3pvSXRRYzQ2SjA0WEgzeFVpT3lPZjJ2RldWQmRpeDFxUjFiT3cxalhVbHVSYXhpZzlCakgwUzRFU1Q4TTFNSlUiLCJtYWMiOiIxMTQ3NzJlNWNhYTFiYmEyMzBmZmM4NWZlN2ZiOTM3MjQ0YjgwNmIxM2QyZDcxNDJlNjczMjcwMjBlNGJiNjRlIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=\/; samesite=lax; pgpphptest_session=eyJpdiI6ImRaMElRbHZabCtMUWZLdk1PUFZldUE9PSIsInZhbHVlIjoiaDVoRE9FNzdrLzRJQythb0dDRkM4aHRaRWExdFJVZXVxR0R6VFhsRXJKQzd1WGdkK21rYlcvR1kyUGZhSFFDQmtDb1F0eFF0dERxN2RYZ2xHbEFSdEpHRlptdWdEYzRJQTgwdXNkY1d4WXJuZmtYbmFWbWlsOERCS2FoRjBZQVYiLCJtYWMiOiI1MTY2ZGRjYTdlNmIxZTAxNWFmNmVmZDE0ZjA4MmFhMzUxYWJjMzlmYzJhYmQ1MGJhMjczNTM3ZWIzOWU5Yjg4IiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "<!DOCTYPE HTML>\n<html>\n<head>\n    <title>User Card - Mr. Brendan Sporer PhD<\/title>\n    <meta charset=\"utf-8\" \/>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" \/>\n    <link rel=\"stylesheet\" href=\"\/assets\/css\/main.css\" \/>\n    <noscript><link rel=\"stylesheet\" href=\"\/assets\/css\/noscript.css\" \/><\/noscript>\n    <link rel=\"stylesheet\" href=\"\/assets\/css\/custom.css\" \/>\n<\/head>\n<body class=\"is-preload\">\n<div id=\"wrapper\">\n    <section id=\"main\">\n    <header>\n        <span class=\"avatar\"><img src=\"images\/users\/2.jpg\" alt=\"\" \/><\/span>\n        <h1>Mr. Brendan Sporer PhD<\/h1>\n        <p>Ut.<\/p>\n    <\/header>\n<\/section>\n    <footer id=\"footer\">\n        <ul class=\"copyright\">\n            <li>&copy; Pictureworks<\/li>\n        <\/ul>\n    <\/footer>\n\n<\/div>\n<script>\n    if ('addEventListener' in window) {\n        window.addEventListener('load', function() { document.body.className = document.body.className.replace(\/\\bis-preload\\b\/, ''); });\n        document.body.className += (navigator.userAgent.match(\/(MSIE|rv:11\\.0)\/) ? ' is-ie' : '');\n    }\n<\/script>\n<\/body>\n<\/html>",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

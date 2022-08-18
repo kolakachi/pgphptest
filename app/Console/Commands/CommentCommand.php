@@ -15,7 +15,7 @@ class CommentCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'update:comment {user : The ID of the user} {comments : comment to append}';
+    protected $signature = 'update:comments {user : The ID of the user} {comments : comment to append}';
 
     /**
      * The console command description.
@@ -35,7 +35,7 @@ class CommentCommand extends Command
     }
 
     /**
-     * Execute the console command.
+     * Execute the console command to append comments.
      *
      * @return int
      */

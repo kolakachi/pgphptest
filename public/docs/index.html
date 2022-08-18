@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PGPPHPTEST Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://localhost";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.36.0.js"></script>
+
+    <script src="../docs/js/theme-default-3.36.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                                                                            <ul id="tocify-header-0" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="introduction">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                                            
+                                                                    </ul>
+                                                <ul id="tocify-header-1" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="authenticating-requests">
+                        <a href="#authenticating-requests">Authenticating requests</a>
+                    </li>
+                                            
+                                                </ul>
+                    
+                    <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETsanctum-csrf-cookie">
+                        <a href="#endpoints-GETsanctum-csrf-cookie">Return an empty response simply to trigger the storage of the CSRF cookie in the browser.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-update">
+                        <a href="#endpoints-POSTapi-update">append comment to the users table</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETappend-comment">
+                        <a href="#endpoints-GETappend-comment">view to append comments to the users table</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTupdate-comment">
+                        <a href="#endpoints-POSTupdate-comment">append comment to the users table</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GET-id--">
+                        <a href="#endpoints-GET-id--">view to fetch user</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+        
+                        
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: August 18 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://127.0.0.1:8000</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETsanctum-csrf-cookie">Return an empty response simply to trigger the storage of the CSRF cookie in the browser.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETsanctum-csrf-cookie">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/sanctum/csrf-cookie" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/sanctum/csrf-cookie"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETsanctum-csrf-cookie">
+            <blockquote>
+            <p>Example response (204):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+access-control-allow-origin: *
+set-cookie: XSRF-TOKEN=eyJpdiI6IkhDTklMQkxEdGZVbDh4UTIwTEJVc0E9PSIsInZhbHVlIjoiYVM5NUdCUE9Fc0E0aERLak5sUU5Bc3lSM0Y4Umd1QzFhK3VZT2RYWXBrMXEzRGpoMUhYSmE0TlRFVFByZWFHQytlMjhzTi83ejJTR3dSbjJzblA0dzcySkpQanhJcTRFV1c2ajhuTTRqNzBPWWMxYmJtaW5rNHg1S004TVR6TnYiLCJtYWMiOiI4Njg1NzAxYjNlYzE0MmU0MTBkOGZiNWNjYzIwOTAyYmU0YTBiMDQ1YzkzZTM2NWJkOTE3ZWI5ZmRkZTFiYzY3IiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6Im1tMnB5ZGp3ZUo4ajA2ZmxxZjlaK3c9PSIsInZhbHVlIjoidlpQTDM5M2ZkbzRFSnJHb05qQnlwYmovZDZkby9NelpiR1NuWEJLQld0NXJ6VjBpdldBRU1UVEhadC9LZllFV3NoaTdlNlo3MlBoVjNtbXA5MXBFb21pQlRoalk4bHgyMlRob0R5aUt5aVlkSjJoN2hxV2JEYVFWUzJIMGZpakIiLCJtYWMiOiIxM2FjMjkyYzI3NDQwMGJlYWQ1NTRlYzE3NjMxNTU5MjY5M2Q4OThjZjRmYzhiYWE5YTg3ODlhNmQ2MjdiZjVjIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+ </code></pre>
+        </details>         <pre>
+<code>[Empty response]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETsanctum-csrf-cookie" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETsanctum-csrf-cookie"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETsanctum-csrf-cookie"></code></pre>
+</span>
+<span id="execution-error-GETsanctum-csrf-cookie" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETsanctum-csrf-cookie"></code></pre>
+</span>
+<form id="form-GETsanctum-csrf-cookie" data-method="GET"
+      data-path="sanctum/csrf-cookie"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETsanctum-csrf-cookie', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETsanctum-csrf-cookie"
+                    onclick="tryItOut('GETsanctum-csrf-cookie');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETsanctum-csrf-cookie"
+                    onclick="cancelTryOut('GETsanctum-csrf-cookie');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETsanctum-csrf-cookie" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>sanctum/csrf-cookie</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-update">append comment to the users table</h2>
+
+<p>
+</p>
+
+<p>This endpoint uses form data to append to comments.</p>
+
+<span id="example-requests-POSTapi-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": 7,
+    \"comments\": \"voluptas\",
+    \"password\": \"exercitationem\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 7,
+    "comments": "voluptas",
+    "password": "exercitationem"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: OK,
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422, Invalid key/value):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: &quot;Invalid key/value&quot;,
+ &quot;errors&quot;: {
+     &quot;id&quot;: [
+         &quot;The selected id is invalid.&quot;
+     ]
+  },
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401, Invalid password):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: &quot;Invalid password&quot;,
+ &quot;errors&quot;: [],
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (%00, Could not complete request):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: &quot;Could not complete request&quot;,
+ &quot;errors&quot;: [],
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-update"></code></pre>
+</span>
+<span id="execution-error-POSTapi-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-update"></code></pre>
+</span>
+<form id="form-POSTapi-update" data-method="POST"
+      data-path="api/update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-update"
+                    onclick="tryItOut('POSTapi-update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-update"
+                    onclick="cancelTryOut('POSTapi-update');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-update" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/update</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="POSTapi-update"
+               value="7"
+               data-component="body" hidden>
+    <br>
+<p>The ID of the user</p>
+        </p>
+                <p>
+            <b><code>comments</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="comments"
+               data-endpoint="POSTapi-update"
+               value="voluptas"
+               data-component="body" hidden>
+    <br>
+<p>The comments to append</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-update"
+               value="exercitationem"
+               data-component="body" hidden>
+    <br>
+<p>The static value</p>
+        </p>
+        </form>
+
+            <h2 id="endpoints-GETappend-comment">view to append comments to the users table</h2>
+
+<p>
+</p>
+
+<p>This endpoint returns a view for appending comments.</p>
+
+<span id="example-requests-GETappend-comment">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/append-comment" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/append-comment"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETappend-comment">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">content-type: text/html; charset=UTF-8
+cache-control: no-cache, private
+set-cookie: XSRF-TOKEN=eyJpdiI6ImxYUWMzK3NTTkUybU5vOHRiWEZkbnc9PSIsInZhbHVlIjoibWgrdnlJbmpwNGhjR1o3cVhMN2V0YmF5MHMvVitjelo3eE0vMlFick9MUGlkNm8yQjUrOExKVTdTQ3FhU09vbURZMEh0Nkl0TkNHL2t4dE1qbmJiaUJNRXpXZFFtOHorTHNBNDFQUjVPUW1VUkx2TGV6TW82Z3l2K1owOVdIMWgiLCJtYWMiOiIzZTZhNGRlMzZjNzU2OTUxMDI3NTQ0M2YwYTRmYWIxOWUzZDRiNWQwMWE4OTFlOGZjMmJkZjE0NmY2ZjIyZThiIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6ImJKMnRFQVRtK2ZEQkNEdFMxQVNMdHc9PSIsInZhbHVlIjoiZGlrRC9mZ2pxOGt5QU5BZzVnTWdJY3REQ1ZDSnBjTExqVDRQeWlYRHNyU1gvZ1Z5UmNvQytBTWNkZE1vbndHQTVpRGJMYmlBZUlNZnE3cTVZYXlLN0pncDRZNGJjVVVMSTVhSmNPbmFDNzJGVkNQM0hoL0d5QkNQTDJYRDUrUlEiLCJtYWMiOiJjNjM0YmYzYjkzMTIwZDRiYTk0ZDg1NjNhNDJlMWI5NDBkMTBmMmRmOTgyNmEwOWViZDM5NTBhMTE3NTE3NmQyIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;User Card - Mr. Brendan Sporer PhD&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/main.css&quot; /&gt;
+    &lt;noscript&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/noscript.css&quot; /&gt;&lt;/noscript&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/custom.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body class=&quot;is-preload&quot;&gt;
+&lt;div id=&quot;wrapper&quot;&gt;
+    &lt;section id=&quot;main&quot;&gt;
+    &lt;header&gt;
+        &lt;span class=&quot;avatar&quot;&gt;&lt;img src=&quot;images/users/2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;
+        &lt;h1&gt;Mr. Brendan Sporer PhD&lt;/h1&gt;
+        &lt;p&gt;Ut.&lt;/p&gt;
+    &lt;/header&gt;
+&lt;/section&gt;
+    &lt;footer id=&quot;footer&quot;&gt;
+        &lt;ul class=&quot;copyright&quot;&gt;
+            &lt;li&gt;&amp;copy; Pictureworks&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/footer&gt;
+
+&lt;/div&gt;
+&lt;script&gt;
+    if ('addEventListener' in window) {
+        window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+ </pre>
+    </span>
+<span id="execution-results-GETappend-comment" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETappend-comment"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETappend-comment"></code></pre>
+</span>
+<span id="execution-error-GETappend-comment" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETappend-comment"></code></pre>
+</span>
+<form id="form-GETappend-comment" data-method="GET"
+      data-path="append-comment"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETappend-comment', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETappend-comment"
+                    onclick="tryItOut('GETappend-comment');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETappend-comment"
+                    onclick="cancelTryOut('GETappend-comment');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETappend-comment" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>append-comment</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTupdate-comment">append comment to the users table</h2>
+
+<p>
+</p>
+
+<p>This endpoint uses json data to append to comments.</p>
+
+<span id="example-requests-POSTupdate-comment">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/update-comment" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": 17,
+    \"comments\": \"illum\",
+    \"password\": \"provident\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/update-comment"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 17,
+    "comments": "illum",
+    "password": "provident"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTupdate-comment">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: OK,
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422, Invalid key/value):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: &quot;Invalid key/value&quot;,
+ &quot;errors&quot;: {
+     &quot;id&quot;: [
+         &quot;The selected id is invalid.&quot;
+     ]
+  },
+}
+ @response status=401 scenario=&quot;Invalid password&quot; {
+ &quot;message&quot;: &quot;Invalid password&quot;,
+ &quot;errors&quot;: [],
+}
+  @response status=%00 scenario=&quot;Could not complete request&quot; {
+ &quot;message&quot;: &quot;Could not complete request&quot;,
+ &quot;errors&quot;: [],
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTupdate-comment" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTupdate-comment"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTupdate-comment"></code></pre>
+</span>
+<span id="execution-error-POSTupdate-comment" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTupdate-comment"></code></pre>
+</span>
+<form id="form-POSTupdate-comment" data-method="POST"
+      data-path="update-comment"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTupdate-comment', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTupdate-comment"
+                    onclick="tryItOut('POSTupdate-comment');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTupdate-comment"
+                    onclick="cancelTryOut('POSTupdate-comment');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTupdate-comment" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>update-comment</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="POSTupdate-comment"
+               value="17"
+               data-component="body" hidden>
+    <br>
+<p>The ID of the user</p>
+        </p>
+                <p>
+            <b><code>comments</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="comments"
+               data-endpoint="POSTupdate-comment"
+               value="illum"
+               data-component="body" hidden>
+    <br>
+<p>The comments to append</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTupdate-comment"
+               value="provident"
+               data-component="body" hidden>
+    <br>
+<p>The static value</p>
+        </p>
+        </form>
+
+            <h2 id="endpoints-GET-id--">view to fetch user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GET-id--">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/nobis" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/nobis"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GET-id--">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">content-type: text/html; charset=UTF-8
+cache-control: no-cache, private
+set-cookie: XSRF-TOKEN=eyJpdiI6IjRjOFJPeFVVSE1QenB1WExXRGdQakE9PSIsInZhbHVlIjoiOUQrRHRiS1o1Y0p6WWp3Q3J0TTY5K0FlTG1YYTNhcGErbVpFeHpsTzhpWmtXU2NpUWdnV0NWZmVSM2hCTXYyK3pvSXRRYzQ2SjA0WEgzeFVpT3lPZjJ2RldWQmRpeDFxUjFiT3cxalhVbHVSYXhpZzlCakgwUzRFU1Q4TTFNSlUiLCJtYWMiOiIxMTQ3NzJlNWNhYTFiYmEyMzBmZmM4NWZlN2ZiOTM3MjQ0YjgwNmIxM2QyZDcxNDJlNjczMjcwMjBlNGJiNjRlIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6ImRaMElRbHZabCtMUWZLdk1PUFZldUE9PSIsInZhbHVlIjoiaDVoRE9FNzdrLzRJQythb0dDRkM4aHRaRWExdFJVZXVxR0R6VFhsRXJKQzd1WGdkK21rYlcvR1kyUGZhSFFDQmtDb1F0eFF0dERxN2RYZ2xHbEFSdEpHRlptdWdEYzRJQTgwdXNkY1d4WXJuZmtYbmFWbWlsOERCS2FoRjBZQVYiLCJtYWMiOiI1MTY2ZGRjYTdlNmIxZTAxNWFmNmVmZDE0ZjA4MmFhMzUxYWJjMzlmYzJhYmQ1MGJhMjczNTM3ZWIzOWU5Yjg4IiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;User Card - Mr. Brendan Sporer PhD&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/main.css&quot; /&gt;
+    &lt;noscript&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/noscript.css&quot; /&gt;&lt;/noscript&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/custom.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body class=&quot;is-preload&quot;&gt;
+&lt;div id=&quot;wrapper&quot;&gt;
+    &lt;section id=&quot;main&quot;&gt;
+    &lt;header&gt;
+        &lt;span class=&quot;avatar&quot;&gt;&lt;img src=&quot;images/users/2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;
+        &lt;h1&gt;Mr. Brendan Sporer PhD&lt;/h1&gt;
+        &lt;p&gt;Ut.&lt;/p&gt;
+    &lt;/header&gt;
+&lt;/section&gt;
+    &lt;footer id=&quot;footer&quot;&gt;
+        &lt;ul class=&quot;copyright&quot;&gt;
+            &lt;li&gt;&amp;copy; Pictureworks&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/footer&gt;
+
+&lt;/div&gt;
+&lt;script&gt;
+    if ('addEventListener' in window) {
+        window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+ </pre>
+    </span>
+<span id="execution-results-GET-id--" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GET-id--"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GET-id--"></code></pre>
+</span>
+<span id="execution-error-GET-id--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-id--"></code></pre>
+</span>
+<form id="form-GET-id--" data-method="GET"
+      data-path="{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-id--', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GET-id--"
+                    onclick="tryItOut('GET-id--');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GET-id--"
+                    onclick="cancelTryOut('GET-id--');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GET-id--" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>required</i> &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GET-id--"
+               value="nobis"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the user.</p>
+            </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>

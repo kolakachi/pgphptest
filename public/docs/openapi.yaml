@@ -1,0 +1,257 @@
+openapi: 3.0.3
+info:
+  title: PGPPHPTEST
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /sanctum/csrf-cookie:
+    get:
+      summary: 'Return an empty response simply to trigger the storage of the CSRF cookie in the browser.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        204:
+          description: ''
+      tags:
+        - Endpoints
+      security: []
+  /api/update:
+    post:
+      summary: 'append comment to the users table'
+      description: 'This endpoint uses form data to append to comments.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": OK,\n}"
+        422:
+          description: 'Invalid key/value'
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": \"Invalid key/value\",\n \"errors\": {\n     \"id\": [\n         \"The selected id is invalid.\"\n     ]\n  },\n}"
+        401:
+          description: 'Invalid password'
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": \"Invalid password\",\n \"errors\": [],\n}"
+        0:
+          description: '%00, Could not complete request'
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": \"Could not complete request\",\n \"errors\": [],\n}"
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the user'
+                  example: 7
+                comments:
+                  type: string
+                  description: 'The comments to append'
+                  example: voluptas
+                password:
+                  type: string
+                  description: 'The static value'
+                  example: exercitationem
+              required:
+                - id
+      security: []
+  /append-comment:
+    get:
+      summary: 'view to append comments to the users table'
+      description: 'This endpoint returns a view for appending comments.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE HTML>\n<html>\n<head>\n    <title>User Card - Mr. Brendan Sporer PhD</title>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />\n    <link rel=\"stylesheet\" href=\"/assets/css/main.css\" />\n    <noscript><link rel=\"stylesheet\" href=\"/assets/css/noscript.css\" /></noscript>\n    <link rel=\"stylesheet\" href=\"/assets/css/custom.css\" />\n</head>\n<body class=\"is-preload\">\n<div id=\"wrapper\">\n    <section id=\"main\">\n    <header>\n        <span class=\"avatar\"><img src=\"images/users/2.jpg\" alt=\"\" /></span>\n        <h1>Mr. Brendan Sporer PhD</h1>\n        <p>Ut.</p>\n    </header>\n</section>\n    <footer id=\"footer\">\n        <ul class=\"copyright\">\n            <li>&copy; Pictureworks</li>\n        </ul>\n    </footer>\n\n</div>\n<script>\n    if ('addEventListener' in window) {\n        window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\\bis-preload\\b/, ''); });\n        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\\.0)/) ? ' is-ie' : '');\n    }\n</script>\n</body>\n</html>"
+      tags:
+        - Endpoints
+      security: []
+  /update-comment:
+    post:
+      summary: 'append comment to the users table'
+      description: 'This endpoint uses json data to append to comments.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": OK,\n}"
+        422:
+          description: 'Invalid key/value'
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": \"Invalid key/value\",\n \"errors\": {\n     \"id\": [\n         \"The selected id is invalid.\"\n     ]\n  },\n}\n @response status=401 scenario=\"Invalid password\" {\n \"message\": \"Invalid password\",\n \"errors\": [],\n}\n  @response status=%00 scenario=\"Could not complete request\" {\n \"message\": \"Could not complete request\",\n \"errors\": [],\n}"
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The ID of the user'
+                  example: 17
+                comments:
+                  type: string
+                  description: 'The comments to append'
+                  example: illum
+                password:
+                  type: string
+                  description: 'The static value'
+                  example: provident
+              required:
+                - id
+      security: []
+  '/{id}':
+    get:
+      summary: 'view to fetch user'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE HTML>\n<html>\n<head>\n    <title>User Card - Mr. Brendan Sporer PhD</title>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />\n    <link rel=\"stylesheet\" href=\"/assets/css/main.css\" />\n    <noscript><link rel=\"stylesheet\" href=\"/assets/css/noscript.css\" /></noscript>\n    <link rel=\"stylesheet\" href=\"/assets/css/custom.css\" />\n</head>\n<body class=\"is-preload\">\n<div id=\"wrapper\">\n    <section id=\"main\">\n    <header>\n        <span class=\"avatar\"><img src=\"images/users/2.jpg\" alt=\"\" /></span>\n        <h1>Mr. Brendan Sporer PhD</h1>\n        <p>Ut.</p>\n    </header>\n</section>\n    <footer id=\"footer\">\n        <ul class=\"copyright\">\n            <li>&copy; Pictureworks</li>\n        </ul>\n    </footer>\n\n</div>\n<script>\n    if ('addEventListener' in window) {\n        window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\\bis-preload\\b/, ''); });\n        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\\.0)/) ? ' is-ie' : '');\n    }\n</script>\n</body>\n</html>"
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'Optional parameter. The ID of the .'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: nobis
+      -
+        in: path
+        name: integer
+        description: 'Optional parameter. the Id of the user.'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: "1\n\nThis endpoint returns a view displaying the selected user."
+tags:
+  -
+    name: Endpoints
+    description: ''

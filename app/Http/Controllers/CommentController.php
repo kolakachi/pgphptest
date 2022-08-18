@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Validator;
 
 class CommentController extends Controller
 {
+    /**
+     *  view to append comments to the users table
+     * 
+     *
+     * This endpoint returns a view for appending comments.
+     * 
+     * 
+     * 
+    */
     public function appendCommentView(){
         $users = User::all();
         $data = [
@@ -18,6 +27,40 @@ class CommentController extends Controller
         ];
         return view('comment-form', $data);
     }
+
+    /**
+     *  append comment to the users table
+     * 
+     *
+     * This endpoint uses json data to append to comments.
+     * 
+     *
+     * 
+     * @bodyParam id integer required The ID of the user
+     * @bodyParam comments string The comments to append
+     * @bodyParam password string The static value
+
+     * 
+     * @response {
+     *  "message": OK,
+     * }
+     * @response status=422 scenario="Invalid key/value" {
+     *  "message": "Invalid key/value",
+     *  "errors": {
+     *      "id": [
+     *          "The selected id is invalid."
+     *      ]
+     *   },
+     * }
+     *  @response status=401 scenario="Invalid password" {
+     *  "message": "Invalid password",
+     *  "errors": [],
+     * }
+     *   @response status=%00 scenario="Could not complete request" {
+     *  "message": "Could not complete request",
+     *  "errors": [],
+     * }
+    */
 
     public function update(Request $request){
         try {
@@ -54,6 +97,16 @@ class CommentController extends Controller
         }        
     }
 
+    /**
+     *  view to fetch user
+     * 
+     * @urlParam {id} integer the Id of the user. Example: 1
+     *
+     * This endpoint returns a view displaying the selected user.
+     * 
+     * 
+     * 
+    */
     public function index($userId){
         $user = User::where('id', $userId)->first();
         if(!$user){
