@@ -53,4 +53,15 @@ class CommentController extends Controller
             ], 500);
         }        
     }
+
+    public function index($userId){
+        $user = User::where('id', $userId)->first();
+        if(!$user){
+            abort(404, "User not found");
+        }
+        $data = [
+            'user' => $user
+        ];
+        return view('user-view', $data);
+    }
 }
