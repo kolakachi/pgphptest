@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="">Update Comment</label>
+                <label for="">Append Comment</label>
                 <textarea class="form-control" cols="20" rows="5" v-model="user.comments"></textarea>
                 <div v-if="errorBag.comments" class="error-message">
                     <ul>
