@@ -16,6 +16,6 @@ use App\Http\Controllers\CommentController;
 
 Route::get('/{id}', [CommentController::class, 'index']);
 
-Route::get('/append-comment', [CommentController::class, 'appendCommentView']);
-Route::post('/update-comment', [CommentController::class, 'update'])->name('update-comment');
+Route::get('/comment/append', [CommentController::class, 'appendCommentView']);
+Route::post('/comment/append', [CommentController::class, 'update'])->name('update-comment');
 
