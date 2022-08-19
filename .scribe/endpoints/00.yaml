@@ -23,7 +23,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkhDTklMQkxEdGZVbDh4UTIwTEJVc0E9PSIsInZhbHVlIjoiYVM5NUdCUE9Fc0E0aERLak5sUU5Bc3lSM0Y4Umd1QzFhK3VZT2RYWXBrMXEzRGpoMUhYSmE0TlRFVFByZWFHQytlMjhzTi83ejJTR3dSbjJzblA0dzcySkpQanhJcTRFV1c2ajhuTTRqNzBPWWMxYmJtaW5rNHg1S004TVR6TnYiLCJtYWMiOiI4Njg1NzAxYjNlYzE0MmU0MTBkOGZiNWNjYzIwOTAyYmU0YTBiMDQ1YzkzZTM2NWJkOTE3ZWI5ZmRkZTFiYzY3IiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6Im1tMnB5ZGp3ZUo4ajA2ZmxxZjlaK3c9PSIsInZhbHVlIjoidlpQTDM5M2ZkbzRFSnJHb05qQnlwYmovZDZkby9NelpiR1NuWEJLQld0NXJ6VjBpdldBRU1UVEhadC9LZllFV3NoaTdlNlo3MlBoVjNtbXA5MXBFb21pQlRoalk4bHgyMlRob0R5aUt5aVlkSjJoN2hxV2JEYVFWUzJIMGZpakIiLCJtYWMiOiIxM2FjMjkyYzI3NDQwMGJlYWQ1NTRlYzE3NjMxNTU5MjY5M2Q4OThjZjRmYzhiYWE5YTg3ODlhNmQ2MjdiZjVjIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjErUzcxdWhLY1hPc2pRdWh4Q1N6dmc9PSIsInZhbHVlIjoiZHBMMjk4MjhNeVA1eEM0NnptT2hId002NUU0T0JFYnZnRDNZQ1BnVVJyUmJTTmxMbFI0LzJLMTQrUVdPVFpmUWVnc0tXanVtbjFZbSsrdWdtRUxBVlV1aVZmdDNHWDVoUjE2UWh2Q0d6UEFmU3pXamdZeUFMM0VEVXg1U1dWUlciLCJtYWMiOiJiMGJlNTlmNWVkMGMyNjcxMTI1Y2QyMzMyMmQzZmZjODI4MmIyMTljYmQ5MTQ1ZGQ0ZTU4NzU1MDNjMzE2ZTZjIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6ImlnbG1kNldxaWZqZzFUcnZYQS94dXc9PSIsInZhbHVlIjoiR2g3TVo3ME9EVXFubVJ2Tk4rREpIbnA3c3JWMEpEWlBrditoU2dtTG5raGFUb2dZb25pMHJJd1hlK0RJNjdmR1dZaEd0SUpsMlpXMWxzQkwweU1seTZ2RlZRQzY3R0JFMmtSc2RVbDdnS2RjTXlqWHVRMmR4YTFZQWc3NG9IdEwiLCJtYWMiOiJiM2I1ODY4YzQwYTI5ZjhmMTJhMTY2OGY2ZGNkYWY3ODcxOWQ5OGRiMmVhNDAxZDcxMzJjYWQyMDhkZjc1NDVhIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
     responseFields: []
   -
@@ -45,21 +45,21 @@ endpoints:
         name: id
         description: 'The ID of the user'
         required: true
-        example: 7
+        example: 16
         type: integer
         custom: []
       comments:
         name: comments
         description: 'The comments to append'
         required: false
-        example: voluptas
+        example: dolores
         type: string
         custom: []
       password:
         name: password
         description: 'The static value'
         required: false
-        example: exercitationem
+        example: sint
         type: string
         custom: []
     responses:
@@ -106,7 +106,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: append-comment
+    uri: comment/append
     metadata:
       title: 'view to append comments to the users table'
       description: 'This endpoint returns a view for appending comments.'
@@ -125,7 +125,7 @@ endpoints:
           <!DOCTYPE HTML>
           <html>
           <head>
-              <title>User Card - Mr. Brendan Sporer PhD</title>
+              <title>Append Comment</title>
               <meta charset="utf-8" />
               <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
               <link rel="stylesheet" href="/assets/css/main.css" />
@@ -136,11 +136,38 @@ endpoints:
           <div id="wrapper">
               <section id="main">
               <header>
-                  <span class="avatar"><img src="images/users/2.jpg" alt="" /></span>
-                  <h1>Mr. Brendan Sporer PhD</h1>
-                  <p>Ut.</p>
+                  <form action="#">
+                      <input type="hidden" name="_token" value="e69kPb4Ej1iYHQg1atji8GwVblUdo0ZoWl7xld0z">            <div v-if="errorMessage" class="error-message">
+                          <p>{{errorMessage}}</p>
+                      </div>
+                      <div class="form-group">
+                          <label for="">Select User</label>
+                          <select class="form-control" v-model="user.id" @change="setComment()">
+                              <option :value="user.id" v-for="(user, index) in users"> {{ user.name }}</option>
+                          </select>
+                          <div v-if="errorBag.id" class="error-message">
+                              <ul>
+                                  <li class="text-danger" v-for="(idError, idIndex) in errorBag.id" :key="idIndex">{{idError}}</li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="">Append Comment</label>
+                          <textarea class="form-control" cols="20" rows="5" v-model="user.comments"></textarea>
+                          <div v-if="errorBag.comments" class="error-message">
+                              <ul>
+                                  <li class="text-danger" v-for="(commentsError, commentsIndex) in errorBag.comments" :key="commentsIndex">{{commentsError}}</li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <button type="buttom" class="button" :disabled="isLoading" @click="submit">Submit</button>
+                      </div>
+                  </form>
               </header>
           </section>
+          <textarea style="display:none" id="users" >[{&quot;id&quot;:1,&quot;name&quot;:&quot;Mr. Brendan Sporer PhD&quot;,&quot;comments&quot;:&quot;Ut.&quot;},{&quot;id&quot;:2,&quot;name&quot;:&quot;Margarette Koepp IV&quot;,&quot;comments&quot;:&quot;Veritatis.\nheloo&quot;},{&quot;id&quot;:3,&quot;name&quot;:&quot;Meda Ledner I&quot;,&quot;comments&quot;:&quot;Aut quasi.&quot;},{&quot;id&quot;:4,&quot;name&quot;:&quot;Ernest Kohler&quot;,&quot;comments&quot;:&quot;Modi.\nModi.\nModi.\r\nModi.&quot;},{&quot;id&quot;:5,&quot;name&quot;:&quot;Anika Homenick&quot;,&quot;comments&quot;:&quot;Aut.&quot;},{&quot;id&quot;:6,&quot;name&quot;:&quot;Karlee Dibbert&quot;,&quot;comments&quot;:&quot;Fuga.&quot;},{&quot;id&quot;:7,&quot;name&quot;:&quot;Lilliana Rutherford&quot;,&quot;comments&quot;:&quot;Saepe.\nSaepe.\nSaepe.\r\nSaepe.&quot;},{&quot;id&quot;:8,&quot;name&quot;:&quot;Thora Rau&quot;,&quot;comments&quot;:&quot;Ab ea.&quot;},{&quot;id&quot;:9,&quot;name&quot;:&quot;Lorenza Stracke&quot;,&quot;comments&quot;:&quot;Corrupti.&quot;},{&quot;id&quot;:10,&quot;name&quot;:&quot;Joey Fadel&quot;,&quot;comments&quot;:&quot;Eum.&quot;}] </textarea>
+          <textarea style="display:none" id="update-url" >http://127.0.0.1:8000/comment/append </textarea>
               <footer id="footer">
                   <ul class="copyright">
                       <li>&copy; Pictureworks</li>
@@ -154,18 +181,24 @@ endpoints:
                   document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
               }
           </script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+          <script src="/js/app.js"></script>
+
+
           </body>
           </html>
         headers:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImxYUWMzK3NTTkUybU5vOHRiWEZkbnc9PSIsInZhbHVlIjoibWgrdnlJbmpwNGhjR1o3cVhMN2V0YmF5MHMvVitjelo3eE0vMlFick9MUGlkNm8yQjUrOExKVTdTQ3FhU09vbURZMEh0Nkl0TkNHL2t4dE1qbmJiaUJNRXpXZFFtOHorTHNBNDFQUjVPUW1VUkx2TGV6TW82Z3l2K1owOVdIMWgiLCJtYWMiOiIzZTZhNGRlMzZjNzU2OTUxMDI3NTQ0M2YwYTRmYWIxOWUzZDRiNWQwMWE4OTFlOGZjMmJkZjE0NmY2ZjIyZThiIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6ImJKMnRFQVRtK2ZEQkNEdFMxQVNMdHc9PSIsInZhbHVlIjoiZGlrRC9mZ2pxOGt5QU5BZzVnTWdJY3REQ1ZDSnBjTExqVDRQeWlYRHNyU1gvZ1Z5UmNvQytBTWNkZE1vbndHQTVpRGJMYmlBZUlNZnE3cTVZYXlLN0pncDRZNGJjVVVMSTVhSmNPbmFDNzJGVkNQM0hoL0d5QkNQTDJYRDUrUlEiLCJtYWMiOiJjNjM0YmYzYjkzMTIwZDRiYTk0ZDg1NjNhNDJlMWI5NDBkMTBmMmRmOTgyNmEwOWViZDM5NTBhMTE3NTE3NmQyIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkVwcm1NNmwxM3VZbjRvU2VyS25vd0E9PSIsInZhbHVlIjoia3hRdW5lNnhvbkFINW1YdWxIay9yNm9aMFNTR0FDV1lJOU1yRjk3WVFkU2kxMlcvTlJYMWdibHZkQ2VsUmpoclpHd2JDc0trVjN0U2NueTVJVkRSemtSeEpReC9kTXorOXplcFRubUFNVlBnWVkwMnVnQ1VGVENiZVpmMjl4aXciLCJtYWMiOiI5OWMzODU4ODQ0NzNjMWRjNmY4NzExZTRmMjQ0ODFlMjNiOTU4MTI5YjljNmI4MzAwNjcyMjAwZTZjYjI1YmIyIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6IllkcE8vbTdHMEVobElwNFR6cExhTmc9PSIsInZhbHVlIjoiYlJVTDJpVm8rUjhvUDczbmZpRTV0ZFZMQTAvZTFVQXRmYlRkNEtvV2o0ZENMc05RVVFGbVQxTFFhWGd3dkJEUVUrL0lBa1ljekJ2VHA5TURqT0FCVzZTejF0TlhlMEhkRU9aUVdFQlFsdE9BZUx4TVVhMDg5OHU0dmZURkdDK0giLCJtYWMiOiIxZmMzZjZmYjI2OTU5MjExMDZhNDM3MWE2N2U2YjgxNDgxZTllZWJhYmJhZTBjYTE3M2U2MWFjYjhmMWRiNjlmIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
     responseFields: []
   -
     httpMethods:
       - POST
-    uri: update-comment
+    uri: comment/append
     metadata:
       title: 'append comment to the users table'
       description: 'This endpoint uses json data to append to comments.'
@@ -181,21 +214,21 @@ endpoints:
         name: id
         description: 'The ID of the user'
         required: true
-        example: 17
+        example: 4
         type: integer
         custom: []
       comments:
         name: comments
         description: 'The comments to append'
         required: false
-        example: illum
+        example: facilis
         type: string
         custom: []
       password:
         name: password
         description: 'The static value'
         required: false
-        example: provident
+        example: repellat
         type: string
         custom: []
     responses:
@@ -253,7 +286,7 @@ endpoints:
         name: integer
         description: 'the Id of the user.'
         required: false
-        example: |
+        example: |-
           1
 
           This endpoint returns a view displaying the selected user.
@@ -263,45 +296,514 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 200
+        status: 404
         content: |-
-          <!DOCTYPE HTML>
-          <html>
-          <head>
-              <title>User Card - Mr. Brendan Sporer PhD</title>
-              <meta charset="utf-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-              <link rel="stylesheet" href="/assets/css/main.css" />
-              <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-              <link rel="stylesheet" href="/assets/css/custom.css" />
-          </head>
-          <body class="is-preload">
-          <div id="wrapper">
-              <section id="main">
-              <header>
-                  <span class="avatar"><img src="images/users/2.jpg" alt="" /></span>
-                  <h1>Mr. Brendan Sporer PhD</h1>
-                  <p>Ut.</p>
-              </header>
-          </section>
-              <footer id="footer">
-                  <ul class="copyright">
-                      <li>&copy; Pictureworks</li>
-                  </ul>
-              </footer>
-
-          </div>
-          <script>
-              if ('addEventListener' in window) {
-                  window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
-                  document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-              }
-          </script>
-          </body>
-          </html>
+          {
+              "message": "User not found",
+              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+              "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php",
+              "line": 1129,
+              "trace": [
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+                      "line": 44,
+                      "function": "abort",
+                      "class": "Illuminate\\Foundation\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/app/Http/Controllers/CommentController.php",
+                      "line": 113,
+                      "function": "abort"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+                      "line": 54,
+                      "function": "index",
+                      "class": "App\\Http\\Controllers\\CommentController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+                      "line": 45,
+                      "function": "callAction",
+                      "class": "Illuminate\\Routing\\Controller",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 262,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\ControllerDispatcher",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 205,
+                      "function": "runController",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 721,
+                      "function": "run",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 128,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                      "line": 50,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php",
+                      "line": 78,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php",
+                      "line": 49,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php",
+                      "line": 121,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php",
+                      "line": 64,
+                      "function": "handleStatefulRequest",
+                      "class": "Illuminate\\Session\\Middleware\\StartSession",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Session\\Middleware\\StartSession",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php",
+                      "line": 37,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php",
+                      "line": 67,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 103,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 723,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 698,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 662,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 651,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 167,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 128,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 40,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 86,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/fruitcake/laravel-cors/src/HandleCors.php",
+                      "line": 38,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Fruitcake\\Cors\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                      "line": 39,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 167,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 103,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 142,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 111,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 299,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 287,
+                      "function": "callLaravelOrLumenRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 89,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 45,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 35,
+                      "function": "makeResponseCallIfConditionsPass",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 222,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 179,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 116,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 123,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 80,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 56,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 55,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 40,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 93,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 37,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 653,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 136,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/symfony/console/Command/Command.php",
+                      "line": 298,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 121,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/symfony/console/Application.php",
+                      "line": 1024,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/symfony/console/Application.php",
+                      "line": 299,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/symfony/console/Application.php",
+                      "line": 171,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Console/Application.php",
+                      "line": 94,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 129,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/artisan",
+                      "line": 37,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  }
+              ]
+          }
         headers:
-          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjRjOFJPeFVVSE1QenB1WExXRGdQakE9PSIsInZhbHVlIjoiOUQrRHRiS1o1Y0p6WWp3Q3J0TTY5K0FlTG1YYTNhcGErbVpFeHpsTzhpWmtXU2NpUWdnV0NWZmVSM2hCTXYyK3pvSXRRYzQ2SjA0WEgzeFVpT3lPZjJ2RldWQmRpeDFxUjFiT3cxalhVbHVSYXhpZzlCakgwUzRFU1Q4TTFNSlUiLCJtYWMiOiIxMTQ3NzJlNWNhYTFiYmEyMzBmZmM4NWZlN2ZiOTM3MjQ0YjgwNmIxM2QyZDcxNDJlNjczMjcwMjBlNGJiNjRlIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6ImRaMElRbHZabCtMUWZLdk1PUFZldUE9PSIsInZhbHVlIjoiaDVoRE9FNzdrLzRJQythb0dDRkM4aHRaRWExdFJVZXVxR0R6VFhsRXJKQzd1WGdkK21rYlcvR1kyUGZhSFFDQmtDb1F0eFF0dERxN2RYZ2xHbEFSdEpHRlptdWdEYzRJQTgwdXNkY1d4WXJuZmtYbmFWbWlsOERCS2FoRjBZQVYiLCJtYWMiOiI1MTY2ZGRjYTdlNmIxZTAxNWFmNmVmZDE0ZjA4MmFhMzUxYWJjMzlmYzJhYmQ1MGJhMjczNTM3ZWIzOWU5Yjg4IiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          content-type: application/json
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImxTL0V1NXFDMUNHU2wvdkFtcnJPZ0E9PSIsInZhbHVlIjoia3dTWCtHZkNucG9HTmlwOHl4bWZDS2JnaWRwYjM4b2dyY0lkQmtzMXJVQnpGamptZ1c2QnJIOHA5alVFelpQeHltbDVMajFUcVhBaENsYW1MaTRiWEs2VEVzSytSM1JRYVQwcEJFUzMrT05CcnNPM25VbGpjdDNxSkEyNHYxVmQiLCJtYWMiOiIwNzQ2MjY3MDkxZjlhYTkzYmQxMDUxYjZlZjlmNjNjYmJlMmFlMjIxZGNlZmMxYTRiZmMwMGM5NDQyMzI2NDEyIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6IkpoOGJTa0R0RXA2alhjSjdvejcveUE9PSIsInZhbHVlIjoiWWxMeHhFN0JMWVp2Q2VRTFFoS3k1SnpDdEh4K2pLQXdYMmYzWWx0MWY1eWtGRkRuZGQxNW9lQjN4Z0hEemFvRU00d3dMTSsrMXd5dG8zMHVZR2U2T2Vsa3FsRFZqL1VQSUxRanZRaW5qZzh5a0N3UzFaUXhzaVhpSDB5UHErL0IiLCJtYWMiOiI0ZDRkY2Y3MTI3YTI3MjBiOTg4YWJiMGUzMmQzMjcwYTM4ZTU2MWYyZTQ2OGQ5MzFjZjVmY2QwOTdkMTU2YmM0IiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
     responseFields: []

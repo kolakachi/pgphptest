@@ -80,11 +80,11 @@
                                     <li class="tocify-item level-2" data-unique="endpoints-POSTapi-update">
                         <a href="#endpoints-POSTapi-update">append comment to the users table</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETappend-comment">
-                        <a href="#endpoints-GETappend-comment">view to append comments to the users table</a>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETcomment-append">
+                        <a href="#endpoints-GETcomment-append">view to append comments to the users table</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-POSTupdate-comment">
-                        <a href="#endpoints-POSTupdate-comment">append comment to the users table</a>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTcomment-append">
+                        <a href="#endpoints-POSTcomment-append">append comment to the users table</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GET-id--">
                         <a href="#endpoints-GET-id--">view to fetch user</a>
@@ -101,7 +101,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 18 2022</li>
+        <li>Last updated: August 19 2022</li>
     </ul>
 </div>
 
@@ -169,7 +169,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6IkhDTklMQkxEdGZVbDh4UTIwTEJVc0E9PSIsInZhbHVlIjoiYVM5NUdCUE9Fc0E0aERLak5sUU5Bc3lSM0Y4Umd1QzFhK3VZT2RYWXBrMXEzRGpoMUhYSmE0TlRFVFByZWFHQytlMjhzTi83ejJTR3dSbjJzblA0dzcySkpQanhJcTRFV1c2ajhuTTRqNzBPWWMxYmJtaW5rNHg1S004TVR6TnYiLCJtYWMiOiI4Njg1NzAxYjNlYzE0MmU0MTBkOGZiNWNjYzIwOTAyYmU0YTBiMDQ1YzkzZTM2NWJkOTE3ZWI5ZmRkZTFiYzY3IiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6Im1tMnB5ZGp3ZUo4ajA2ZmxxZjlaK3c9PSIsInZhbHVlIjoidlpQTDM5M2ZkbzRFSnJHb05qQnlwYmovZDZkby9NelpiR1NuWEJLQld0NXJ6VjBpdldBRU1UVEhadC9LZllFV3NoaTdlNlo3MlBoVjNtbXA5MXBFb21pQlRoalk4bHgyMlRob0R5aUt5aVlkSjJoN2hxV2JEYVFWUzJIMGZpakIiLCJtYWMiOiIxM2FjMjkyYzI3NDQwMGJlYWQ1NTRlYzE3NjMxNTU5MjY5M2Q4OThjZjRmYzhiYWE5YTg3ODlhNmQ2MjdiZjVjIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IjErUzcxdWhLY1hPc2pRdWh4Q1N6dmc9PSIsInZhbHVlIjoiZHBMMjk4MjhNeVA1eEM0NnptT2hId002NUU0T0JFYnZnRDNZQ1BnVVJyUmJTTmxMbFI0LzJLMTQrUVdPVFpmUWVnc0tXanVtbjFZbSsrdWdtRUxBVlV1aVZmdDNHWDVoUjE2UWh2Q0d6UEFmU3pXamdZeUFMM0VEVXg1U1dWUlciLCJtYWMiOiJiMGJlNTlmNWVkMGMyNjcxMTI1Y2QyMzMyMmQzZmZjODI4MmIyMTljYmQ5MTQ1ZGQ0ZTU4NzU1MDNjMzE2ZTZjIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6ImlnbG1kNldxaWZqZzFUcnZYQS94dXc9PSIsInZhbHVlIjoiR2g3TVo3ME9EVXFubVJ2Tk4rREpIbnA3c3JWMEpEWlBrditoU2dtTG5raGFUb2dZb25pMHJJd1hlK0RJNjdmR1dZaEd0SUpsMlpXMWxzQkwweU1seTZ2RlZRQzY3R0JFMmtSc2RVbDdnS2RjTXlqWHVRMmR4YTFZQWc3NG9IdEwiLCJtYWMiOiJiM2I1ODY4YzQwYTI5ZjhmMTJhMTY2OGY2ZGNkYWY3ODcxOWQ5OGRiMmVhNDAxZDcxMzJjYWQyMDhkZjc1NDVhIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre>
         </details>         <pre>
 <code>[Empty response]</code>
@@ -233,9 +233,9 @@ set-cookie: XSRF-TOKEN=eyJpdiI6IkhDTklMQkxEdGZVbDh4UTIwTEJVc0E9PSIsInZhbHVlIjoiY
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id\": 7,
-    \"comments\": \"voluptas\",
-    \"password\": \"exercitationem\"
+    \"id\": 16,
+    \"comments\": \"dolores\",
+    \"password\": \"sint\"
 }"
 </code></pre></div>
 
@@ -251,9 +251,9 @@ const headers = {
 };
 
 let body = {
-    "id": 7,
-    "comments": "voluptas",
-    "password": "exercitationem"
+    "id": 16,
+    "comments": "dolores",
+    "password": "sint"
 };
 
 fetch(url, {
@@ -354,7 +354,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="POSTapi-update"
-               value="7"
+               value="16"
                data-component="body" hidden>
     <br>
 <p>The ID of the user</p>
@@ -364,7 +364,7 @@ fetch(url, {
                 <input type="text"
                name="comments"
                data-endpoint="POSTapi-update"
-               value="voluptas"
+               value="dolores"
                data-component="body" hidden>
     <br>
 <p>The comments to append</p>
@@ -374,34 +374,34 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTapi-update"
-               value="exercitationem"
+               value="sint"
                data-component="body" hidden>
     <br>
 <p>The static value</p>
         </p>
         </form>
 
-            <h2 id="endpoints-GETappend-comment">view to append comments to the users table</h2>
+            <h2 id="endpoints-GETcomment-append">view to append comments to the users table</h2>
 
 <p>
 </p>
 
 <p>This endpoint returns a view for appending comments.</p>
 
-<span id="example-requests-GETappend-comment">
+<span id="example-requests-GETcomment-append">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/append-comment" \
+    --get "http://127.0.0.1:8000/comment/append" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/append-comment"
+    "http://127.0.0.1:8000/comment/append"
 );
 
 const headers = {
@@ -416,7 +416,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETappend-comment">
+<span id="example-responses-GETcomment-append">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -426,14 +426,14 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
-set-cookie: XSRF-TOKEN=eyJpdiI6ImxYUWMzK3NTTkUybU5vOHRiWEZkbnc9PSIsInZhbHVlIjoibWgrdnlJbmpwNGhjR1o3cVhMN2V0YmF5MHMvVitjelo3eE0vMlFick9MUGlkNm8yQjUrOExKVTdTQ3FhU09vbURZMEh0Nkl0TkNHL2t4dE1qbmJiaUJNRXpXZFFtOHorTHNBNDFQUjVPUW1VUkx2TGV6TW82Z3l2K1owOVdIMWgiLCJtYWMiOiIzZTZhNGRlMzZjNzU2OTUxMDI3NTQ0M2YwYTRmYWIxOWUzZDRiNWQwMWE4OTFlOGZjMmJkZjE0NmY2ZjIyZThiIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6ImJKMnRFQVRtK2ZEQkNEdFMxQVNMdHc9PSIsInZhbHVlIjoiZGlrRC9mZ2pxOGt5QU5BZzVnTWdJY3REQ1ZDSnBjTExqVDRQeWlYRHNyU1gvZ1Z5UmNvQytBTWNkZE1vbndHQTVpRGJMYmlBZUlNZnE3cTVZYXlLN0pncDRZNGJjVVVMSTVhSmNPbmFDNzJGVkNQM0hoL0d5QkNQTDJYRDUrUlEiLCJtYWMiOiJjNjM0YmYzYjkzMTIwZDRiYTk0ZDg1NjNhNDJlMWI5NDBkMTBmMmRmOTgyNmEwOWViZDM5NTBhMTE3NTE3NmQyIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IkVwcm1NNmwxM3VZbjRvU2VyS25vd0E9PSIsInZhbHVlIjoia3hRdW5lNnhvbkFINW1YdWxIay9yNm9aMFNTR0FDV1lJOU1yRjk3WVFkU2kxMlcvTlJYMWdibHZkQ2VsUmpoclpHd2JDc0trVjN0U2NueTVJVkRSemtSeEpReC9kTXorOXplcFRubUFNVlBnWVkwMnVnQ1VGVENiZVpmMjl4aXciLCJtYWMiOiI5OWMzODU4ODQ0NzNjMWRjNmY4NzExZTRmMjQ0ODFlMjNiOTU4MTI5YjljNmI4MzAwNjcyMjAwZTZjYjI1YmIyIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6IllkcE8vbTdHMEVobElwNFR6cExhTmc9PSIsInZhbHVlIjoiYlJVTDJpVm8rUjhvUDczbmZpRTV0ZFZMQTAvZTFVQXRmYlRkNEtvV2o0ZENMc05RVVFGbVQxTFFhWGd3dkJEUVUrL0lBa1ljekJ2VHA5TURqT0FCVzZTejF0TlhlMEhkRU9aUVdFQlFsdE9BZUx4TVVhMDg5OHU0dmZURkdDK0giLCJtYWMiOiIxZmMzZjZmYjI2OTU5MjExMDZhNDM3MWE2N2U2YjgxNDgxZTllZWJhYmJhZTBjYTE3M2U2MWFjYjhmMWRiNjlmIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre>
         </details>         <pre>
 
 <code class="language-json">&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;User Card - Mr. Brendan Sporer PhD&lt;/title&gt;
+    &lt;title&gt;Append Comment&lt;/title&gt;
     &lt;meta charset=&quot;utf-8&quot; /&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot; /&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/main.css&quot; /&gt;
@@ -444,11 +444,38 @@ set-cookie: XSRF-TOKEN=eyJpdiI6ImxYUWMzK3NTTkUybU5vOHRiWEZkbnc9PSIsInZhbHVlIjoib
 &lt;div id=&quot;wrapper&quot;&gt;
     &lt;section id=&quot;main&quot;&gt;
     &lt;header&gt;
-        &lt;span class=&quot;avatar&quot;&gt;&lt;img src=&quot;images/users/2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;
-        &lt;h1&gt;Mr. Brendan Sporer PhD&lt;/h1&gt;
-        &lt;p&gt;Ut.&lt;/p&gt;
+        &lt;form action=&quot;#&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;_token&quot; value=&quot;e69kPb4Ej1iYHQg1atji8GwVblUdo0ZoWl7xld0z&quot;&gt;            &lt;div v-if=&quot;errorMessage&quot; class=&quot;error-message&quot;&gt;
+                &lt;p&gt;{{errorMessage}}&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;&quot;&gt;Select User&lt;/label&gt;
+                &lt;select class=&quot;form-control&quot; v-model=&quot;user.id&quot; @change=&quot;setComment()&quot;&gt;
+                    &lt;option :value=&quot;user.id&quot; v-for=&quot;(user, index) in users&quot;&gt; {{ user.name }}&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;div v-if=&quot;errorBag.id&quot; class=&quot;error-message&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li class=&quot;text-danger&quot; v-for=&quot;(idError, idIndex) in errorBag.id&quot; :key=&quot;idIndex&quot;&gt;{{idError}}&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;&quot;&gt;Append Comment&lt;/label&gt;
+                &lt;textarea class=&quot;form-control&quot; cols=&quot;20&quot; rows=&quot;5&quot; v-model=&quot;user.comments&quot;&gt;&lt;/textarea&gt;
+                &lt;div v-if=&quot;errorBag.comments&quot; class=&quot;error-message&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li class=&quot;text-danger&quot; v-for=&quot;(commentsError, commentsIndex) in errorBag.comments&quot; :key=&quot;commentsIndex&quot;&gt;{{commentsError}}&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;button type=&quot;buttom&quot; class=&quot;button&quot; :disabled=&quot;isLoading&quot; @click=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
     &lt;/header&gt;
 &lt;/section&gt;
+&lt;textarea style=&quot;display:none&quot; id=&quot;users&quot; &gt;[{&amp;quot;id&amp;quot;:1,&amp;quot;name&amp;quot;:&amp;quot;Mr. Brendan Sporer PhD&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Ut.&amp;quot;},{&amp;quot;id&amp;quot;:2,&amp;quot;name&amp;quot;:&amp;quot;Margarette Koepp IV&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Veritatis.\nheloo&amp;quot;},{&amp;quot;id&amp;quot;:3,&amp;quot;name&amp;quot;:&amp;quot;Meda Ledner I&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Aut quasi.&amp;quot;},{&amp;quot;id&amp;quot;:4,&amp;quot;name&amp;quot;:&amp;quot;Ernest Kohler&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Modi.\nModi.\nModi.\r\nModi.&amp;quot;},{&amp;quot;id&amp;quot;:5,&amp;quot;name&amp;quot;:&amp;quot;Anika Homenick&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Aut.&amp;quot;},{&amp;quot;id&amp;quot;:6,&amp;quot;name&amp;quot;:&amp;quot;Karlee Dibbert&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Fuga.&amp;quot;},{&amp;quot;id&amp;quot;:7,&amp;quot;name&amp;quot;:&amp;quot;Lilliana Rutherford&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Saepe.\nSaepe.\nSaepe.\r\nSaepe.&amp;quot;},{&amp;quot;id&amp;quot;:8,&amp;quot;name&amp;quot;:&amp;quot;Thora Rau&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Ab ea.&amp;quot;},{&amp;quot;id&amp;quot;:9,&amp;quot;name&amp;quot;:&amp;quot;Lorenza Stracke&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Corrupti.&amp;quot;},{&amp;quot;id&amp;quot;:10,&amp;quot;name&amp;quot;:&amp;quot;Joey Fadel&amp;quot;,&amp;quot;comments&amp;quot;:&amp;quot;Eum.&amp;quot;}] &lt;/textarea&gt;
+&lt;textarea style=&quot;display:none&quot; id=&quot;update-url&quot; &gt;http://127.0.0.1:8000/comment/append &lt;/textarea&gt;
     &lt;footer id=&quot;footer&quot;&gt;
         &lt;ul class=&quot;copyright&quot;&gt;
             &lt;li&gt;&amp;copy; Pictureworks&lt;/li&gt;
@@ -462,78 +489,84 @@ set-cookie: XSRF-TOKEN=eyJpdiI6ImxYUWMzK3NTTkUybU5vOHRiWEZkbnc9PSIsInZhbHVlIjoib
         document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
     }
 &lt;/script&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/vue@2.6.14/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/app.js&quot;&gt;&lt;/script&gt;
+
+
 &lt;/body&gt;
 &lt;/html&gt;</code>
  </pre>
     </span>
-<span id="execution-results-GETappend-comment" hidden>
+<span id="execution-results-GETcomment-append" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETappend-comment"></span>:
+                id="execution-response-status-GETcomment-append"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETappend-comment"></code></pre>
+    <pre class="json"><code id="execution-response-content-GETcomment-append"></code></pre>
 </span>
-<span id="execution-error-GETappend-comment" hidden>
+<span id="execution-error-GETcomment-append" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETappend-comment"></code></pre>
+    <pre><code id="execution-error-message-GETcomment-append"></code></pre>
 </span>
-<form id="form-GETappend-comment" data-method="GET"
-      data-path="append-comment"
+<form id="form-GETcomment-append" data-method="GET"
+      data-path="comment/append"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETappend-comment', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETcomment-append', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETappend-comment"
-                    onclick="tryItOut('GETappend-comment');">Try it out ⚡
+                    id="btn-tryout-GETcomment-append"
+                    onclick="tryItOut('GETcomment-append');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETappend-comment"
-                    onclick="cancelTryOut('GETappend-comment');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETcomment-append"
+                    onclick="cancelTryOut('GETcomment-append');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETappend-comment" hidden>Send Request 💥
+                    id="btn-executetryout-GETcomment-append" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>append-comment</code></b>
+            <b><code>comment/append</code></b>
         </p>
                     </form>
 
-            <h2 id="endpoints-POSTupdate-comment">append comment to the users table</h2>
+            <h2 id="endpoints-POSTcomment-append">append comment to the users table</h2>
 
 <p>
 </p>
 
 <p>This endpoint uses json data to append to comments.</p>
 
-<span id="example-requests-POSTupdate-comment">
+<span id="example-requests-POSTcomment-append">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/update-comment" \
+    "http://127.0.0.1:8000/comment/append" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id\": 17,
-    \"comments\": \"illum\",
-    \"password\": \"provident\"
+    \"id\": 4,
+    \"comments\": \"facilis\",
+    \"password\": \"repellat\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/update-comment"
+    "http://127.0.0.1:8000/comment/append"
 );
 
 const headers = {
@@ -542,9 +575,9 @@ const headers = {
 };
 
 let body = {
-    "id": 17,
-    "comments": "illum",
-    "password": "provident"
+    "id": 4,
+    "comments": "facilis",
+    "password": "repellat"
 };
 
 fetch(url, {
@@ -555,7 +588,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-POSTupdate-comment">
+<span id="example-responses-POSTcomment-append">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -588,52 +621,52 @@ fetch(url, {
 }</code>
  </pre>
     </span>
-<span id="execution-results-POSTupdate-comment" hidden>
+<span id="execution-results-POSTcomment-append" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTupdate-comment"></span>:
+                id="execution-response-status-POSTcomment-append"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTupdate-comment"></code></pre>
+    <pre class="json"><code id="execution-response-content-POSTcomment-append"></code></pre>
 </span>
-<span id="execution-error-POSTupdate-comment" hidden>
+<span id="execution-error-POSTcomment-append" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTupdate-comment"></code></pre>
+    <pre><code id="execution-error-message-POSTcomment-append"></code></pre>
 </span>
-<form id="form-POSTupdate-comment" data-method="POST"
-      data-path="update-comment"
+<form id="form-POSTcomment-append" data-method="POST"
+      data-path="comment/append"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTupdate-comment', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTcomment-append', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTupdate-comment"
-                    onclick="tryItOut('POSTupdate-comment');">Try it out ⚡
+                    id="btn-tryout-POSTcomment-append"
+                    onclick="tryItOut('POSTcomment-append');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTupdate-comment"
-                    onclick="cancelTryOut('POSTupdate-comment');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTcomment-append"
+                    onclick="cancelTryOut('POSTcomment-append');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTupdate-comment" hidden>Send Request 💥
+                    id="btn-executetryout-POSTcomment-append" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>update-comment</code></b>
+            <b><code>comment/append</code></b>
         </p>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
                name="id"
-               data-endpoint="POSTupdate-comment"
-               value="17"
+               data-endpoint="POSTcomment-append"
+               value="4"
                data-component="body" hidden>
     <br>
 <p>The ID of the user</p>
@@ -642,8 +675,8 @@ fetch(url, {
             <b><code>comments</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="comments"
-               data-endpoint="POSTupdate-comment"
-               value="illum"
+               data-endpoint="POSTcomment-append"
+               value="facilis"
                data-component="body" hidden>
     <br>
 <p>The comments to append</p>
@@ -652,8 +685,8 @@ fetch(url, {
             <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="password"
-               data-endpoint="POSTupdate-comment"
-               value="provident"
+               data-endpoint="POSTcomment-append"
+               value="repellat"
                data-component="body" hidden>
     <br>
 <p>The static value</p>
@@ -673,14 +706,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/nobis" \
+    --get "http://127.0.0.1:8000/sed" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/nobis"
+    "http://127.0.0.1:8000/sed"
 );
 
 const headers = {
@@ -697,52 +730,521 @@ fetch(url, {
 
 <span id="example-responses-GET-id--">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
                 <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
             </summary>
-            <pre><code class="language-http">content-type: text/html; charset=UTF-8
-cache-control: no-cache, private
-set-cookie: XSRF-TOKEN=eyJpdiI6IjRjOFJPeFVVSE1QenB1WExXRGdQakE9PSIsInZhbHVlIjoiOUQrRHRiS1o1Y0p6WWp3Q3J0TTY5K0FlTG1YYTNhcGErbVpFeHpsTzhpWmtXU2NpUWdnV0NWZmVSM2hCTXYyK3pvSXRRYzQ2SjA0WEgzeFVpT3lPZjJ2RldWQmRpeDFxUjFiT3cxalhVbHVSYXhpZzlCakgwUzRFU1Q4TTFNSlUiLCJtYWMiOiIxMTQ3NzJlNWNhYTFiYmEyMzBmZmM4NWZlN2ZiOTM3MjQ0YjgwNmIxM2QyZDcxNDJlNjczMjcwMjBlNGJiNjRlIiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6ImRaMElRbHZabCtMUWZLdk1PUFZldUE9PSIsInZhbHVlIjoiaDVoRE9FNzdrLzRJQythb0dDRkM4aHRaRWExdFJVZXVxR0R6VFhsRXJKQzd1WGdkK21rYlcvR1kyUGZhSFFDQmtDb1F0eFF0dERxN2RYZ2xHbEFSdEpHRlptdWdEYzRJQTgwdXNkY1d4WXJuZmtYbmFWbWlsOERCS2FoRjBZQVYiLCJtYWMiOiI1MTY2ZGRjYTdlNmIxZTAxNWFmNmVmZDE0ZjA4MmFhMzUxYWJjMzlmYzJhYmQ1MGJhMjczNTM3ZWIzOWU5Yjg4IiwidGFnIjoiIn0%3D; expires=Thu, 18-Aug-2022 23:51:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+set-cookie: XSRF-TOKEN=eyJpdiI6ImxTL0V1NXFDMUNHU2wvdkFtcnJPZ0E9PSIsInZhbHVlIjoia3dTWCtHZkNucG9HTmlwOHl4bWZDS2JnaWRwYjM4b2dyY0lkQmtzMXJVQnpGamptZ1c2QnJIOHA5alVFelpQeHltbDVMajFUcVhBaENsYW1MaTRiWEs2VEVzSytSM1JRYVQwcEJFUzMrT05CcnNPM25VbGpjdDNxSkEyNHYxVmQiLCJtYWMiOiIwNzQ2MjY3MDkxZjlhYTkzYmQxMDUxYjZlZjlmNjNjYmJlMmFlMjIxZGNlZmMxYTRiZmMwMGM5NDQyMzI2NDEyIiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; samesite=lax; pgpphptest_session=eyJpdiI6IkpoOGJTa0R0RXA2alhjSjdvejcveUE9PSIsInZhbHVlIjoiWWxMeHhFN0JMWVp2Q2VRTFFoS3k1SnpDdEh4K2pLQXdYMmYzWWx0MWY1eWtGRkRuZGQxNW9lQjN4Z0hEemFvRU00d3dMTSsrMXd5dG8zMHVZR2U2T2Vsa3FsRFZqL1VQSUxRanZRaW5qZzh5a0N3UzFaUXhzaVhpSDB5UHErL0IiLCJtYWMiOiI0ZDRkY2Y3MTI3YTI3MjBiOTg4YWJiMGUzMmQzMjcwYTM4ZTU2MWYyZTQ2OGQ5MzFjZjVmY2QwOTdkMTU2YmM0IiwidGFnIjoiIn0%3D; expires=Fri, 19-Aug-2022 10:46:01 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre>
         </details>         <pre>
 
-<code class="language-json">&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;User Card - Mr. Brendan Sporer PhD&lt;/title&gt;
-    &lt;meta charset=&quot;utf-8&quot; /&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot; /&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/main.css&quot; /&gt;
-    &lt;noscript&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/noscript.css&quot; /&gt;&lt;/noscript&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/custom.css&quot; /&gt;
-&lt;/head&gt;
-&lt;body class=&quot;is-preload&quot;&gt;
-&lt;div id=&quot;wrapper&quot;&gt;
-    &lt;section id=&quot;main&quot;&gt;
-    &lt;header&gt;
-        &lt;span class=&quot;avatar&quot;&gt;&lt;img src=&quot;images/users/2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;
-        &lt;h1&gt;Mr. Brendan Sporer PhD&lt;/h1&gt;
-        &lt;p&gt;Ut.&lt;/p&gt;
-    &lt;/header&gt;
-&lt;/section&gt;
-    &lt;footer id=&quot;footer&quot;&gt;
-        &lt;ul class=&quot;copyright&quot;&gt;
-            &lt;li&gt;&amp;copy; Pictureworks&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/footer&gt;
-
-&lt;/div&gt;
-&lt;script&gt;
-    if ('addEventListener' in window) {
-        window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
-        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-    }
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code>
+<code class="language-json">{
+    &quot;message&quot;: &quot;User not found&quot;,
+    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
+    &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php&quot;,
+    &quot;line&quot;: 1129,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php&quot;,
+            &quot;line&quot;: 44,
+            &quot;function&quot;: &quot;abort&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/app/Http/Controllers/CommentController.php&quot;,
+            &quot;line&quot;: 113,
+            &quot;function&quot;: &quot;abort&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Controller.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;index&quot;,
+            &quot;class&quot;: &quot;App\\Http\\Controllers\\CommentController&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php&quot;,
+            &quot;line&quot;: 45,
+            &quot;function&quot;: &quot;callAction&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Controller&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php&quot;,
+            &quot;line&quot;: 262,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Route.php&quot;,
+            &quot;line&quot;: 205,
+            &quot;function&quot;: &quot;runController&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 721,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 128,
+            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php&quot;,
+            &quot;line&quot;: 78,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php&quot;,
+            &quot;line&quot;: 49,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\View\\Middleware\\ShareErrorsFromSession&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php&quot;,
+            &quot;line&quot;: 121,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php&quot;,
+            &quot;line&quot;: 64,
+            &quot;function&quot;: &quot;handleStatefulRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Session\\Middleware\\StartSession&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Session\\Middleware\\StartSession&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php&quot;,
+            &quot;line&quot;: 67,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Cookie\\Middleware\\EncryptCookies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 103,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 723,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 698,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 662,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
+            &quot;line&quot;: 651,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 128,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 86,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/fruitcake/laravel-cors/src/HandleCors.php&quot;,
+            &quot;line&quot;: 38,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Fruitcake\\Cors\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 167,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
+            &quot;line&quot;: 103,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 142,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
+            &quot;line&quot;: 111,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 287,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 89,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 45,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 222,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 179,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 123,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 80,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 56,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 55,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
+            &quot;line&quot;: 653,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 136,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/symfony/console/Command/Command.php&quot;,
+            &quot;line&quot;: 298,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
+            &quot;line&quot;: 121,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 1024,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/symfony/console/Application.php&quot;,
+            &quot;line&quot;: 171,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Console/Application.php&quot;,
+            &quot;line&quot;: 94,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
+            &quot;line&quot;: 129,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;/usr/local/var/www/gigs/javascript-tuts/pgphptest/pgphplaravel/artisan&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
  </pre>
     </span>
 <span id="execution-results-GET-id--" hidden>
@@ -790,10 +1292,22 @@ set-cookie: XSRF-TOKEN=eyJpdiI6IjRjOFJPeFVVSE1QenB1WExXRGdQakE9PSIsInZhbHVlIjoiO
                 <input type="text"
                name="id"
                data-endpoint="GET-id--"
-               value="nobis"
+               value="sed"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
+            </p>
+                    <p>
+                <b><code>integer</code></b>&nbsp;&nbsp;<small>integer</small>     <i>required</i> &nbsp;
+                <input type="text"
+               name="integer"
+               data-endpoint="GET-id--"
+               value="1
+
+This endpoint returns a view displaying the selected user."
+               data-component="url" hidden>
+    <br>
+<p>the Id of the user.</p>
             </p>
                     </form>
 
